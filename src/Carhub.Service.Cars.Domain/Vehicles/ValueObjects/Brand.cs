@@ -5,7 +5,7 @@ namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects;
 
 public sealed class Brand : ValueObject
 {
-    private string Value { get; }
+    public string Value { get; }
 
     private Brand(string value)
     {

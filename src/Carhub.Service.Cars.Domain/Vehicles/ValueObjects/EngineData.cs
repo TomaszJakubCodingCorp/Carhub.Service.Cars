@@ -29,6 +29,17 @@ public sealed class EngineData : ValueObject
         TypeOfFuel = typeOfFuel;
     }
 
+    public static string TypeOfFuelPetrol()
+        => "Petrol";
+    public static string TypeOfFuelDiesel()
+        => "Diesel";
+    public static string TypeOfFuelElectricity()
+        => "Electricity";
+    public static string TypeOfFuelHybrid()
+        => "Hybrid";
+    public static string TypeOfFuelHydrogen()
+        => "Hydrogen";
+
     protected override IEnumerable<object> GetAtomicValues()
     {
         yield return Capacity;

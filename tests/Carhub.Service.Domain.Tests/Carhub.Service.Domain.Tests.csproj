@@ -24,4 +24,8 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Carhub.Service.Cars.Domain\Carhub.Service.Cars.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

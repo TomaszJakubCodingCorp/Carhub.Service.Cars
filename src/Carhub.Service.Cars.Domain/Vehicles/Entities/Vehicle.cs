@@ -23,7 +23,7 @@ public sealed class Vehicle : AggregateRoot
         Weight = weight;
     }
 
-    private static Vehicle Create(Guid id, string vinNumber, string brand, string model,
+    public static Vehicle Create(Guid id, string vinNumber, string brand, string model,
         string type, double capacity, double power, string typeOfFuel,  double gross, double curb)
     {
         var vehicle = new Vehicle(id, vinNumber, brand, model, type, new Weight(gross, curb));

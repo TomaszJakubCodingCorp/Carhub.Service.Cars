@@ -7,7 +7,7 @@ public sealed class VehicleType : ValueObject
 {
     private readonly List<string> _types =
     [
-        "Passengers Car", "Trucks", "Motorcycle"
+        "Passengers Car", "Truck", "Motorcycle"
     ];
     
     public string Value { get; }
@@ -19,13 +19,22 @@ public sealed class VehicleType : ValueObject
             throw new EmptyVehicleTypeException();
         }
 
-        if (_types.Contains(value))
+        if (!_types.Contains(value))
         {
             throw new InvalidVehicleTypeException(value);
         }
         Value = value;
     }
 
+    public static VehicleType PassengerCar()
+        => new VehicleType("Passengers Car");
+    
+    public static VehicleType Truck()
+        => new VehicleType("Truck");
+    
+    public static VehicleType Motorcycle()
+        => new VehicleType("Motorcycle");
+    
     public static implicit operator VehicleType(string value)
         => new VehicleType(value);
 
