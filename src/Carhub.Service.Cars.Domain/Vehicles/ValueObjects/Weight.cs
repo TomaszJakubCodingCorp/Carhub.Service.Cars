@@ -1,4 +1,4 @@
-using Carhub.Lib.SharedKernel;
+using Carhub.Lib.SharedKernel.SharedKernel;
 
 namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects;
 

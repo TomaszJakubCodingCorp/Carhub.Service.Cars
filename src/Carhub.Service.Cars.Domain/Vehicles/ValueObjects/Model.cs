@@ -1,4 +1,5 @@
 using Carhub.Lib.SharedKernel;
+using Carhub.Lib.SharedKernel.SharedKernel;
 using Carhub.Service.Cars.Domain.Vehicles.Exceptions;
 
 namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects;

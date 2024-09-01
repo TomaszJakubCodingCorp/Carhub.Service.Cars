@@ -1,4 +1,4 @@
-using Carhub.Lib.Exceptions;
+using Carhub.Lib.Exceptions.Abstractions;
 
 namespace Carhub.Service.Cars.Domain.Vehicles.Exceptions;
 
