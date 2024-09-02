@@ -1,6 +1,8 @@
 using Carhub.Service.Cars.Domain.Vehicles.Entities;
 using Carhub.Service.Cars.Domain.Vehicles.Exceptions;
+using Carhub.Service.Cars.Domain.Vehicles.Exceptions.Vehicles;
 using Carhub.Service.Cars.Domain.Vehicles.ValueObjects;
+using Carhub.Service.Cars.Domain.Vehicles.ValueObjects.Vehicle;
 using Shouldly;
 using Xunit;
 

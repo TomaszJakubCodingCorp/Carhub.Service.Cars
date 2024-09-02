@@ -1,6 +1,6 @@
 using Carhub.Lib.SharedKernel.SharedKernel;
 
-namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects;
+namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects.Vehicle;
 
 public sealed class Weight : ValueObject
 {

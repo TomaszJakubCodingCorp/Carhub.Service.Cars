@@ -1,8 +1,8 @@
-using Carhub.Lib.SharedKernel;
 using Carhub.Lib.SharedKernel.SharedKernel;
 using Carhub.Service.Cars.Domain.Vehicles.Exceptions;
+using Carhub.Service.Cars.Domain.Vehicles.Exceptions.Vehicles;
 
-namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects;
+namespace Carhub.Service.Cars.Domain.Vehicles.ValueObjects.Vehicle;
 
 public sealed class Model : ValueObject
 {

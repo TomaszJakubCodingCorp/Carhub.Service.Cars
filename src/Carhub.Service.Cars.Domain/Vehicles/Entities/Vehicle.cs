@@ -1,6 +1,7 @@
 using Carhub.Lib.SharedKernel;
 using Carhub.Lib.SharedKernel.SharedKernel;
 using Carhub.Service.Cars.Domain.Vehicles.ValueObjects;
+using Carhub.Service.Cars.Domain.Vehicles.ValueObjects.Vehicle;
 
 namespace Carhub.Service.Cars.Domain.Vehicles.Entities;
 
