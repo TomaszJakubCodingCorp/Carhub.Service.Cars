@@ -3,15 +3,15 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Carhub.Lib.Exceptions" Version="0.0.1" />
-      <PackageReference Include="Carhub.Lib.SharedKernel" Version="0.0.1" />
+      <PackageReference Include="Carhub.Lib.Cqrs" Version="0.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Ownership\" />
+      <ProjectReference Include="..\Carhub.Service.Cars.Domain\Carhub.Service.Cars.Domain.csproj" />
     </ItemGroup>
 
 </Project>

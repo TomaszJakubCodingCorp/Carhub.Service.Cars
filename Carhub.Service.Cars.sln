@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Domain.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Tests.Shared", "tests\Carhub.Service.Tests.Shared\Carhub.Service.Tests.Shared.csproj", "{EFE980BB-A96D-484D-BBB4-75CAF4FA6883}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Cars.Application", "src\Carhub.Service.Cars.Application\Carhub.Service.Cars.Application.csproj", "{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,11 +42,16 @@ Global
 		{EFE980BB-A96D-484D-BBB4-75CAF4FA6883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE980BB-A96D-484D-BBB4-75CAF4FA6883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE980BB-A96D-484D-BBB4-75CAF4FA6883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E53F93A-C190-4A82-83D4-1CDA1A9D0054} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
 		{929C9308-9490-4866-B128-B9AF188A535A} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
 		{A8378C7D-B1B8-4690-99DA-BF310658654A} = {28C514AB-1D34-43DE-933E-29BBF7981AD0}
 		{EFE980BB-A96D-484D-BBB4-75CAF4FA6883} = {28C514AB-1D34-43DE-933E-29BBF7981AD0}
+		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
 	EndGlobalSection
 EndGlobal
