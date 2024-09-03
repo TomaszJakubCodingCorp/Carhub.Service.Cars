@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Cars.Api", "src\Carhub.Service.Cars.Api\Carhub.Service.Cars.Api.csproj", "{5E53F93A-C190-4A82-83D4-1CDA1A9D0054}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Api", "src\Carhub.Service.Vehicles.Api\Carhub.Service.Vehicles.Api.csproj", "{5E53F93A-C190-4A82-83D4-1CDA1A9D0054}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F944839A-813B-4304-B11E-27B6C67B5BE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Cars.Domain", "src\Carhub.Service.Cars.Domain\Carhub.Service.Cars.Domain.csproj", "{929C9308-9490-4866-B128-B9AF188A535A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Domain", "src\Carhub.Service.Vehicles.Domain\Carhub.Service.Vehicles.Domain.csproj", "{929C9308-9490-4866-B128-B9AF188A535A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{28C514AB-1D34-43DE-933E-29BBF7981AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Domain.Tests", "tests\Carhub.Service.Domain.Tests\Carhub.Service.Domain.Tests.csproj", "{A8378C7D-B1B8-4690-99DA-BF310658654A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Domain.Tests", "tests\Carhub.Service.Vehicles.Domain.Tests\Carhub.Service.Vehicles.Domain.Tests.csproj", "{A8378C7D-B1B8-4690-99DA-BF310658654A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Tests.Shared", "tests\Carhub.Service.Tests.Shared\Carhub.Service.Tests.Shared.csproj", "{EFE980BB-A96D-484D-BBB4-75CAF4FA6883}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Tests.Shared", "tests\Carhub.Service.Vehicles.Tests.Shared\Carhub.Service.Vehicles.Tests.Shared.csproj", "{EFE980BB-A96D-484D-BBB4-75CAF4FA6883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Cars.Application", "src\Carhub.Service.Cars.Application\Carhub.Service.Cars.Application.csproj", "{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Application", "src\Carhub.Service.Vehicles.Application\Carhub.Service.Vehicles.Application.csproj", "{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Application.Tests", "tests\Carhub.Service.Vehicles.Application.Tests\Carhub.Service.Vehicles.Application.Tests.csproj", "{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,10 @@ Global
 		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E53F93A-C190-4A82-83D4-1CDA1A9D0054} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
@@ -53,5 +59,6 @@ Global
 		{A8378C7D-B1B8-4690-99DA-BF310658654A} = {28C514AB-1D34-43DE-933E-29BBF7981AD0}
 		{EFE980BB-A96D-484D-BBB4-75CAF4FA6883} = {28C514AB-1D34-43DE-933E-29BBF7981AD0}
 		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
+		{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4} = {28C514AB-1D34-43DE-933E-29BBF7981AD0}
 	EndGlobalSection
 EndGlobal
