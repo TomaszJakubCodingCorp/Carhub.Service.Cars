@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Carhub.Lib.Exceptions" Version="0.0.1" />
+      <PackageReference Include="Carhub.Lib.Exceptions" Version="0.0.2" />
       <PackageReference Include="Carhub.Lib.SharedKernel" Version="0.0.1" />
     </ItemGroup>
 

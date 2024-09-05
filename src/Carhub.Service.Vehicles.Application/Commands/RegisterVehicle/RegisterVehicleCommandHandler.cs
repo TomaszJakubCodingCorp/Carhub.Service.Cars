@@ -1,13 +1,23 @@
 using Carhub.Lib.Cqrs.Commands.Abstractions;
+using Carhub.Service.Vehicles.Application.Exceptions;
 using Carhub.Service.Vehicles.Domain.Repositories;
+using Carhub.Service.Vehicles.Domain.Vehicles.Entities;
 
 namespace Carhub.Service.Vehicles.Application.Commands.RegisterVehicle;
 
 internal sealed class RegisterVehicleCommandHandler(
     IVehicleRepository vehicleRepository) : ICommandHandler<RegisterVehicleCommand>
 {
-    public Task HandleAsync(RegisterVehicleCommand command, CancellationToken cancellationToken = new CancellationToken())
+    public async Task HandleAsync(RegisterVehicleCommand command, CancellationToken cancellationToken = new CancellationToken())
     {
-        return Task.CompletedTask;
+        if (await vehicleRepository.IsVinNumberExists(command.VinNumber))
+        {
+            throw new VinNumberAlreadyRegisteredException(command.VinNumber);
+        }
+
+        var vehicle = Vehicle.Create(command.Id, command.VinNumber, command.Brand, command.Model, command.Type,
+            command.EngineCapacity, command.EnginePower, command.EngineTypeOfFuel, command.WeightGross,
+            command.WeightCurb);
+        await vehicleRepository.AddAsync(vehicle, cancellationToken);
     }
 }
