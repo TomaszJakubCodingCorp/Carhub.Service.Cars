@@ -11,6 +11,7 @@ public sealed class Vehicle : AggregateRoot
     public VehicleType VehicleType { get; }
     public EngineData EngineData { get; private set; }
     public Weight Weight { get; }
+    public List<Registration> Registrations { get; private set; }
     
     private Vehicle(AggregateId id, VinNumber vinNumber, Brand brand, Model model,
         VehicleType vehicleType, Weight weight)
@@ -33,4 +34,6 @@ public sealed class Vehicle : AggregateRoot
 
     private void ChangeEngineData(double capacity, double power, string typeOfFuel)
         => EngineData = new EngineData(capacity, power, typeOfFuel);
+    
+    
 }

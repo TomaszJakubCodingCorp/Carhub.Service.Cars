@@ -5,7 +5,7 @@ namespace Carhub.Service.Vehicles.Domain.Vehicles.ValueObjects.Vehicle;
 
 public sealed class EngineData : ValueObject
 {
-    private readonly List<string> _typesOfFuel = [
+    internal static List<string> TypesOfFuel = [
         "Petrol", "Diesel", "Electricity", "Hybrid", "Hydrogen"
     ];
     
@@ -22,7 +22,7 @@ public sealed class EngineData : ValueObject
             throw new EmptyTypeOfFuelException();
         }
 
-        if (!_typesOfFuel.Contains(typeOfFuel))
+        if (!TypesOfFuel.Contains(typeOfFuel))
         {
             throw new InvalidTypeOfFuelException(typeOfFuel);
         }

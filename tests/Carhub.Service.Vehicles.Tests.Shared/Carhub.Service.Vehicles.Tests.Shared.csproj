@@ -11,4 +11,8 @@
       <PackageReference Include="Bogus" Version="35.6.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\Carhub.Service.Vehicles.Domain\Carhub.Service.Vehicles.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

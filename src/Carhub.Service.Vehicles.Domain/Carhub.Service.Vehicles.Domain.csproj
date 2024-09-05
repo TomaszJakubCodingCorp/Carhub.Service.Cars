@@ -14,5 +14,8 @@
     <ItemGroup>
       <Folder Include="Ownership\" />
     </ItemGroup>
+    <ItemGroup>
+        <InternalsVisibleTo Include="Carhub.Service.Vehicles.Tests.Shared"/>
+    </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ namespace Carhub.Service.Vehicles.Domain.Vehicles.ValueObjects.Vehicle;
 
 public sealed class VehicleType : ValueObject
 {
-    private readonly List<string> _types =
+    internal static List<string> Types =
     [
         "Passengers Car", "Truck", "Motorcycle"
     ];
@@ -19,7 +19,7 @@ public sealed class VehicleType : ValueObject
             throw new EmptyVehicleTypeException();
         }
 
-        if (!_types.Contains(value))
+        if (!Types.Contains(value))
         {
             throw new InvalidVehicleTypeException(value);
         }
