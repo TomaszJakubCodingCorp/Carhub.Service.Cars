@@ -27,6 +27,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Carhub.Service.Vehicles.Domain\Carhub.Service.Vehicles.Domain.csproj" />
+      <ProjectReference Include="..\Carhub.Service.Vehicles.Tests.Shared\Carhub.Service.Vehicles.Tests.Shared.csproj" />
     </ItemGroup>
 
 </Project>

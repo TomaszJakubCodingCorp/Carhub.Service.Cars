@@ -34,6 +34,10 @@ public sealed class Vehicle : AggregateRoot
 
     private void ChangeEngineData(double capacity, double power, string typeOfFuel)
         => EngineData = new EngineData(capacity, power, typeOfFuel);
-    
-    
+
+    public void AppendRegistration(Guid id, DateOnly periodFrom, DateOnly? periodTo, string number, string issuerName,
+        string issuerAddress, string ownerFullName, string ownerIdentityNumber, string ownerAddress)
+    {
+        
+    }
 }

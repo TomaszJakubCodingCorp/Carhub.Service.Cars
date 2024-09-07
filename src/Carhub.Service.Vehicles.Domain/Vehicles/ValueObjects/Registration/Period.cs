@@ -5,10 +5,10 @@ namespace Carhub.Service.Vehicles.Domain.Vehicles.ValueObjects.Registration;
 
 public sealed class Period : ValueObject
 {
-    public DateTime From { get; }
-    public DateTime? To { get; }
+    public DateOnly From { get; }
+    public DateOnly? To { get; }
 
-    public Period(DateTime from, DateTime? to)
+    public Period(DateOnly from, DateOnly? to)
     {
         if (to is null)
         {
@@ -24,7 +24,7 @@ public sealed class Period : ValueObject
         To = to;
     }
 
-    public Period(DateTime from)
+    public Period(DateOnly from)
         => From = from;
     
 
