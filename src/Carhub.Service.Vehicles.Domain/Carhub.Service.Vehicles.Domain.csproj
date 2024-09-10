@@ -16,6 +16,7 @@
     </ItemGroup>
     <ItemGroup>
         <InternalsVisibleTo Include="Carhub.Service.Vehicles.Tests.Shared"/>
+        <InternalsVisibleTo Include="Carhub.Service.Vehicles.Domain.Tests"/>
     </ItemGroup>
 
 </Project>

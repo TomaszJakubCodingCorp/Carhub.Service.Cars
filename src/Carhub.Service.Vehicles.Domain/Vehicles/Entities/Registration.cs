@@ -14,19 +14,28 @@ public sealed class Registration
     private Registration(EntityId id)
         => Id = id;
 
-    internal static Registration Create(Guid id, DateOnly periodFrom, string number, string issuerName,
+    internal static Registration Create(Guid id, DateOnly periodFrom, DateOnly? periodTo, string number, string issuerName,
         string issuerAddress, string ownerFullName, string ownerIdentityNumber, string ownerAddress)
     {
         var registration = new Registration(id);
-        registration.ChangePeriod(periodFrom);
+        registration.ChangePeriod(periodFrom, periodTo);
         registration.ChangeNumber(number);
         registration.ChangeIssuer(issuerName, issuerAddress);
         registration.ChangeOwnerDate(ownerFullName, ownerIdentityNumber, ownerAddress);
         return registration;
     }
 
-    private void ChangePeriod(DateOnly from)
-        => Period = new Period(from);
+    private void ChangePeriod(DateOnly from, DateOnly? to)
+    {
+        if(to is null)
+        {
+            Period = new Period(from);
+        }
+        else
+        {
+            Period = new Period(from, to);
+        }
+    }
 
     private void ChangeNumber(string number)
         => Number = new Number(number);

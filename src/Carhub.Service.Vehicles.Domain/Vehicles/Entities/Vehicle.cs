@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using Carhub.Lib.SharedKernel.SharedKernel;
 using Carhub.Service.Vehicles.Domain.Vehicles.ValueObjects.Vehicle;
 
@@ -5,13 +6,14 @@ namespace Carhub.Service.Vehicles.Domain.Vehicles.Entities;
 
 public sealed class Vehicle : AggregateRoot
 {
+    private readonly HashSet<Registration> _registrations = new HashSet<Registration>();
     public VinNumber VinNumber { get; }
     public Brand Brand { get; }
     public Model Model { get; }
     public VehicleType VehicleType { get; }
     public EngineData EngineData { get; private set; }
     public Weight Weight { get; }
-    public List<Registration> Registrations { get; private set; }
+    public IReadOnlyList<Registration> Registrations => _registrations.ToImmutableList();
     
     private Vehicle(AggregateId id, VinNumber vinNumber, Brand brand, Model model,
         VehicleType vehicleType, Weight weight)
@@ -38,6 +40,8 @@ public sealed class Vehicle : AggregateRoot
     public void AppendRegistration(Guid id, DateOnly periodFrom, DateOnly? periodTo, string number, string issuerName,
         string issuerAddress, string ownerFullName, string ownerIdentityNumber, string ownerAddress)
     {
-        
+        var registration = Registration.Create(id, periodFrom, periodTo, number, issuerName, issuerAddress,
+            ownerFullName, ownerIdentityNumber, ownerAddress);
+        _registrations.Add(registration);
     }
 }
