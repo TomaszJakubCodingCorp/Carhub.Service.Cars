@@ -88,11 +88,9 @@ public sealed class CollisionRegistrationDatesPolicyTests
     }
     
     #region arrange
-
-    private IRegistrationDatesPolicy _policy;
+    private readonly IRegistrationDatesPolicy _policy;
 
     public CollisionRegistrationDatesPolicyTests()
         => _policy = new CollisionRegistrationDatesPolicy();
-
     #endregion
 }
