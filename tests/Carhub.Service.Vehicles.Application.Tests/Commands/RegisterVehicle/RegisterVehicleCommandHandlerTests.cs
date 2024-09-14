@@ -21,7 +21,7 @@ public sealed class RegisterVehicleCommandHandlerTests
         var command = new RegisterVehicleCommand(Guid.NewGuid(), new string('1', 17),"test_brand", 
             "test_model", VehicleType.PassengerCar(),1, 1, EngineData.TypeOfFuelDiesel(), 1, 1);
         _vehicleRepository
-            .IsVinNumberExists(Arg.Is<string>(command.VinNumber))
+            .IsVinNumberExistsAsync(Arg.Is<string>(command.VinNumber), default)
             .Returns(true);
         
         //act
@@ -38,7 +38,7 @@ public sealed class RegisterVehicleCommandHandlerTests
         var command = new RegisterVehicleCommand(Guid.NewGuid(), new string('1', 17),"test_brand", 
             "test_model", VehicleType.PassengerCar(),1, 1, EngineData.TypeOfFuelDiesel(), 1, 1);
         _vehicleRepository
-            .IsVinNumberExists(Arg.Is<string>(command.VinNumber))
+            .IsVinNumberExistsAsync(Arg.Is<string>(command.VinNumber), default)
             .Returns(false);
         
         //act

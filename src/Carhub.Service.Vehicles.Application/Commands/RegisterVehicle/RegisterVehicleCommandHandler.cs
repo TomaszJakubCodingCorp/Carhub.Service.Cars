@@ -10,7 +10,7 @@ internal sealed class RegisterVehicleCommandHandler(
 {
     public async Task HandleAsync(RegisterVehicleCommand command, CancellationToken cancellationToken = new CancellationToken())
     {
-        if (await vehicleRepository.IsVinNumberExists(command.VinNumber))
+        if (await vehicleRepository.IsVinNumberExistsAsync(command.VinNumber, cancellationToken))
         {
             throw new VinNumberAlreadyRegisteredException(command.VinNumber);
         }

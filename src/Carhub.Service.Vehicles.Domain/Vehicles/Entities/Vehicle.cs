@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using Carhub.Lib.SharedKernel.SharedKernel;
+using Carhub.Service.Vehicles.Domain.Vehicles.Policies.Internals;
 using Carhub.Service.Vehicles.Domain.Vehicles.ValueObjects.Vehicle;
 
 namespace Carhub.Service.Vehicles.Domain.Vehicles.Entities;
@@ -40,6 +41,18 @@ public sealed class Vehicle : AggregateRoot
     public void AppendRegistration(Guid id, DateOnly periodFrom, DateOnly? periodTo, string number, string issuerName,
         string issuerAddress, string ownerFullName, string ownerIdentityNumber, string ownerAddress)
     {
+        var policyFactory = RegistrationDatesPolicyFactory.GetInstance();
+        var policy = policyFactory.Create(periodTo is null);
+        policy.Validate(this, periodFrom, periodTo);
+
+        if (periodTo is null && _registrations.Any()) 
+        {
+            if (_registrations.Last().Period.To is null)
+            {
+                _registrations.Last().FinishPeriod(periodFrom.AddDays(-1));
+            }
+        }
+        
         var registration = Registration.Create(id, periodFrom, periodTo, number, issuerName, issuerAddress,
             ownerFullName, ownerIdentityNumber, ownerAddress);
         _registrations.Add(registration);

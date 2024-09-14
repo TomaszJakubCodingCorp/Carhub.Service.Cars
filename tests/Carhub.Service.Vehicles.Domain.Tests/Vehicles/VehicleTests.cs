@@ -64,7 +64,7 @@ public sealed class VehicleTests
         var registrationOwnerAddress = "new_owner_address";
 
         //act
-        vehicle.AppendRegistration(registrationId, registrationPeriodFrom, null, registrationNumber, registrationIssuerName,
+        vehicle.AppendRegistration(registrationId, registrationPeriodFrom, registrationPeriodTo, registrationNumber, registrationIssuerName,
             registrationIssuerAddress, registrationOwnerFullName, registrationOwnerIdentityNumber, registrationOwnerAddress);
 
         //assert

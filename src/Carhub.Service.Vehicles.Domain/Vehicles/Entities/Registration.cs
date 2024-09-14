@@ -26,16 +26,7 @@ public sealed class Registration
     }
 
     private void ChangePeriod(DateOnly from, DateOnly? to)
-    {
-        if(to is null)
-        {
-            Period = new Period(from);
-        }
-        else
-        {
-            Period = new Period(from, to);
-        }
-    }
+        => Period = to is null ? new Period(from) : new Period(from, to);
 
     private void ChangeNumber(string number)
         => Number = new Number(number);
@@ -45,4 +36,7 @@ public sealed class Registration
 
     private void ChangeOwnerDate(string fullName, string identityNumber, string address)
         => OwnerData = new OwnerData(fullName, identityNumber, address);
+
+    internal void FinishPeriod(DateOnly dateTo)
+        => Period = new Period(Period.From, dateTo);
 }

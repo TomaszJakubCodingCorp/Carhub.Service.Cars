@@ -10,10 +10,6 @@
       <PackageReference Include="Carhub.Lib.Exceptions" Version="0.0.2" />
       <PackageReference Include="Carhub.Lib.SharedKernel" Version="0.0.1" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Ownership\" />
-    </ItemGroup>
     <ItemGroup>
         <InternalsVisibleTo Include="Carhub.Service.Vehicles.Tests.Shared"/>
         <InternalsVisibleTo Include="Carhub.Service.Vehicles.Domain.Tests"/>
