@@ -1,6 +1,6 @@
 using Carhub.Lib.SharedKernel.SharedKernel;
 
-namespace Carhub.Service.Vehicles.Domain.Ownership.Entities;
+namespace Carhub.Service.Vehicles.Domain.Ownerships.Entities;
 
 public sealed class Ownership : AggregateRoot
 {

@@ -1,6 +1,6 @@
 using Carhub.Lib.SharedKernel.SharedKernel;
 
-namespace Carhub.Service.Vehicles.Domain.Ownership.ValueObjects.ConfirmationDocument;
+namespace Carhub.Service.Vehicles.Domain.Ownerships.ValueObjects.ConfirmationDocument;
 
 public class CreatedAt : ValueObject
 {
