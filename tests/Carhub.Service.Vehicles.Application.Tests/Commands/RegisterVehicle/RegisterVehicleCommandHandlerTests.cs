@@ -79,7 +79,7 @@ public sealed class RegisterVehicleCommandHandlerTests
     {
         _vehicleRepository = Substitute.For<IVehicleRepository>();
         _eventPublisher = Substitute.For<IEventPublisher>();
-        _handler = new RegisterVehicleCommandHandler(_vehicleRepository);
+        _handler = new RegisterVehicleCommandHandler(_vehicleRepository, _eventPublisher);
     }
     #endregion
 }
