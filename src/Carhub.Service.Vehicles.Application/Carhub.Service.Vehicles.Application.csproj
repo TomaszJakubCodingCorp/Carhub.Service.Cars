@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="Carhub.Lib.Cqrs" Version="0.0.1" />
+      <PackageReference Include="Carhub.Lib.MessageBrokers.Abstractions" Version="0.0.2" />
     </ItemGroup>
 
     <ItemGroup>
