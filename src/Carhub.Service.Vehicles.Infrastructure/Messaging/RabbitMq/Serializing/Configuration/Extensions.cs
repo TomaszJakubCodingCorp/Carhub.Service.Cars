@@ -5,5 +5,6 @@ namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Serializing.C
 internal static class Extensions
 {
     internal static IServiceCollection AddRabbitMqSerializing(this IServiceCollection services)
-        => services.AddSingleton<IRabbitMqSerializer, RabbitMqSerializer>();
+        => services
+            .AddSingleton<IRabbitMqSerializer, RabbitMqSerializer>();
 }

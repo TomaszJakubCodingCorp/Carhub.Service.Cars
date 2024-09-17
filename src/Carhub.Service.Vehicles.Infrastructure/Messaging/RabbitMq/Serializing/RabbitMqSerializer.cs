@@ -12,7 +12,6 @@ internal sealed class RabbitMqSerializer : IRabbitMqSerializer
 
     public ReadOnlySpan<byte> ToJson<TMessage>(TMessage message) where TMessage : class
         => Encode(Serialize(message));
-    
     private string Serialize(object value) => JsonConvert.SerializeObject(value, _settings);
     private static ReadOnlySpan<byte> Encode(string value) => Encoding.UTF8.GetBytes(value);
 }

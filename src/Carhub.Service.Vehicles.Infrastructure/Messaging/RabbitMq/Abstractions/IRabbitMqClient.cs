@@ -1,4 +1,5 @@
 using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions;
+using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
 
 namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Abstractions;
 
