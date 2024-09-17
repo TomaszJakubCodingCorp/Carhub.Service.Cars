@@ -7,4 +7,19 @@
         <RootNamespace>Carhub.Service.Vehicle.Infrastructure</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Carhub.Service.Vehicles.Application\Carhub.Service.Vehicles.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Messaging\Internals\" />
+    </ItemGroup>
+
 </Project>
