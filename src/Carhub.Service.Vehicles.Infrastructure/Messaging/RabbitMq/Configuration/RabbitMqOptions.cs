@@ -1,7 +1,14 @@
+using Carhub.Service.Vehicle.Infrastructure.Messaging.Configuration;
+
 namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Configuration;
 
-public record RabbitMqOptions
+internal sealed record RabbitMqOptions
 {
-    internal static string OptionsName = nameof(RabbitMqOptions);
-    public string Type { get; set; }
+    internal static string OptionsName = $"{MessagingOptions.OptionsName}:{nameof(RabbitMqOptions)}";
+    public int Port { get; init; }
+    public string HostName { get; init; }
+    public string VirtualHost { get; init; }
+    public string UserName { get; init; }
+    public string Password { get; init; }
+    
 }
