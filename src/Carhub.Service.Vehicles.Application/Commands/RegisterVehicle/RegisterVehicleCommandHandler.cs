@@ -16,7 +16,6 @@ internal sealed class RegisterVehicleCommandHandler(
         {
             throw new VinNumberAlreadyRegisteredException(command.VinNumber);
         }
-
         var vehicle = Vehicle.Create(command.Id, command.VinNumber, command.Brand, command.Model, command.Type,
             command.EngineCapacity, command.EnginePower, command.EngineTypeOfFuel, command.WeightGross,
             command.WeightCurb);

@@ -1,12 +1,11 @@
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Abstractions;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Connections;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Serializing;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Abstractions;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Abstractions;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Connections;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Serializing;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq;
 
 internal sealed class RabbitMqClient : IRabbitMqClient
 {

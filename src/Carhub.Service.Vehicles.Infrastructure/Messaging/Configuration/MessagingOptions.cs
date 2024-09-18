@@ -1,4 +1,4 @@
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.Configuration;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.Configuration;
 
 internal sealed record MessagingOptions
 {

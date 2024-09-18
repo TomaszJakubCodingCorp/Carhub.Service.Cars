@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Serializing.Configuration;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Serializing.Configuration;
 
 internal static class Extensions
 {

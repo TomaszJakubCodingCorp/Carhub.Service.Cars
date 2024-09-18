@@ -1,11 +1,11 @@
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Abstractions;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Connections;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Serializing.Configuration;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Abstractions;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Connections;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Serializing.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RabbitMQ.Client;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Configuration;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Configuration;
 
 internal static class Extensions
 {
@@ -30,7 +30,8 @@ internal static class Extensions
                     HostName = options.HostName,
                     VirtualHost = options.VirtualHost,
                     UserName = options.UserName,
-                    Password = options.Password
+                    Password = options.Password,
+                    ClientProvidedName = "Carhub.Service.Cars"
                 };
                 var connection = connectionFactory.CreateConnection();
                 return new ProducerConnection(connection);

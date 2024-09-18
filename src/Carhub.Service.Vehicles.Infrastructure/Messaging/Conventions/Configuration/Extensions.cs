@@ -1,7 +1,7 @@
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Configuration;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Configuration;
 
 internal static class Extensions
 {

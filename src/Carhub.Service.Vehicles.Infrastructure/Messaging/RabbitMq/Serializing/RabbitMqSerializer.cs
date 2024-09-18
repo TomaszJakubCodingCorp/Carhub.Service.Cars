@@ -1,7 +1,7 @@
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Serializing;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Serializing;
 
 internal sealed class RabbitMqSerializer : IRabbitMqSerializer
 {

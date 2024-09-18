@@ -1,4 +1,4 @@
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Serializing;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Serializing;
 
 internal interface IRabbitMqSerializer
 {

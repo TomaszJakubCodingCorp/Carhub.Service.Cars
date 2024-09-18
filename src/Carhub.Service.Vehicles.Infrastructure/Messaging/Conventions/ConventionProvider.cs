@@ -1,8 +1,8 @@
 using System.Reflection;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
 using Carhub.Service.Vehicles.Application;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Abstractions;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions;
 
 internal sealed class ConventionProvider : IConventionProvider
 {

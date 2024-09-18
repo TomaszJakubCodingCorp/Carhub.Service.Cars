@@ -1,8 +1,8 @@
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Abstractions;
 using Carhub.Service.Vehicles.Application;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Abstractions;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Abstractions;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging;
 
 internal sealed class EventPublisher(
     IConventionProvider conventionProvider,

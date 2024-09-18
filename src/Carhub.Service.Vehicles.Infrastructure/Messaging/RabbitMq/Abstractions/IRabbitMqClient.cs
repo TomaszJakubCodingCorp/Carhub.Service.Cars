@@ -1,7 +1,6 @@
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions;
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Abstractions;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Abstractions;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Abstractions;
 
 internal interface IRabbitMqClient
 {

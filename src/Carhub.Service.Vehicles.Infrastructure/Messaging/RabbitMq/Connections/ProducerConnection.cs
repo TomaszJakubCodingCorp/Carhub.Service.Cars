@@ -1,6 +1,6 @@
 using RabbitMQ.Client;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Connections;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Connections;
 
 internal sealed class ProducerConnection(IConnection connection)
 {

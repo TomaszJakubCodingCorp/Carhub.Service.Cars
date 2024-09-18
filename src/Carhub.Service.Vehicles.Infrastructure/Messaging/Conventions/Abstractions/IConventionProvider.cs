@@ -1,6 +1,6 @@
 using Carhub.Service.Vehicles.Application;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.Conventions.Abstractions;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.Conventions.Abstractions;
 
 internal interface IConventionProvider
 {

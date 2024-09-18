@@ -1,6 +1,6 @@
-using Carhub.Service.Vehicle.Infrastructure.Messaging.Configuration;
+using Carhub.Service.Vehicles.Infrastructure.Messaging.Configuration;
 
-namespace Carhub.Service.Vehicle.Infrastructure.Messaging.RabbitMq.Configuration;
+namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Configuration;
 
 internal sealed record RabbitMqOptions
 {
