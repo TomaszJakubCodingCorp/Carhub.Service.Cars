@@ -1,10 +1,14 @@
+using Carhub.Lib.Cqrs.Dispatchers.Abstractions;
 using Carhub.Service.Vehicles.Api;
 using Carhub.Service.Vehicles.Application.Commands.RegisterVehicle;
+using Carhub.Service.Vehicles.Application.Configuration;
 using Carhub.Service.Vehicles.Infrastructure.Configuration;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 var app = builder.Build();
 
@@ -16,9 +20,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapPost("/vehicles/register", async (RegisterVehicleCommand command) =>
+app.MapPost("/vehicles/register", async (RegisterVehicleCommand command, CancellationToken cancellationToken, 
+    [FromServices] ICqrsDispatcher dispatcher) =>
 {
-
+    var id = Guid.NewGuid();
+    await dispatcher.HandleAsync(command with {Id = id}, cancellationToken);
 });
 
 var summaries = new[]
