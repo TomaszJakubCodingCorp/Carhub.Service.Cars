@@ -1,0 +1,17 @@
+@url = localhost:5104
+
+###
+GET {{url}}/vehicles/register
+Content-Type: application/json
+
+{
+ "vinNumber": "12345678901234567",
+ "brand": "string",
+ "model": "string",
+ "type": "Passengers Car",
+ "engineCapacity": 0,
+ "enginePower": 0,
+ "engineTypeOfFuel": "Petrol",
+ "weightGross": 0,
+ "weightCurb": 0
+}

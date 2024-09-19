@@ -13,13 +13,14 @@ internal static class Extensions
         => services
             .AddRabbitMqSerializing()
             .AddServices()
-            .AddRabbitMqProducer(configuration);
+            .AddRabbitMqProducerConnection(configuration)
+            .AddRabbitMqConsumerConnection(configuration);
 
     private static IServiceCollection AddServices(this IServiceCollection services)
         => services
             .AddScoped<IRabbitMqClient, RabbitMqClient>();
 
-    private static IServiceCollection AddRabbitMqProducer(this IServiceCollection services, IConfiguration configuration)
+    private static IServiceCollection AddRabbitMqProducerConnection(this IServiceCollection services, IConfiguration configuration)
         => services
             .AddSingleton<ProducerConnection>(sp =>
             {
@@ -35,6 +36,25 @@ internal static class Extensions
                 };
                 var connection = connectionFactory.CreateConnection();
                 return new ProducerConnection(connection);
+            });
+
+    private static IServiceCollection AddRabbitMqConsumerConnection(this IServiceCollection services,
+        IConfiguration configuration)
+        => services
+            .AddSingleton<ConsumerConnection>(sp =>
+            {
+                var options = configuration.GetOptions<RabbitMqOptions>(RabbitMqOptions.OptionsName);
+                var connectionFactory = new ConnectionFactory()
+                {
+                    Port = options.Port,
+                    HostName = options.HostName,
+                    VirtualHost = options.VirtualHost,
+                    UserName = options.UserName,
+                    Password = options.Password,
+                    ClientProvidedName = "Carhub.Service.Cars"
+                };
+                var connection = connectionFactory.CreateConnection();
+                return new ConsumerConnection(connection);
             });
 
     public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : class, new()
