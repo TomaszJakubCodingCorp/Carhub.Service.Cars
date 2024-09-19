@@ -1,6 +1,6 @@
 using Carhub.Lib.Cqrs.Dispatchers.Abstractions;
 using Carhub.Service.Vehicles.Api;
-using Carhub.Service.Vehicles.Application.Commands.RegisterVehicle;
+using Carhub.Service.Vehicles.Application.Commands.Vehicles.RegisterVehicle;
 using Carhub.Service.Vehicles.Application.Configuration;
 using Carhub.Service.Vehicles.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Mvc;

@@ -2,7 +2,7 @@ using Carhub.Lib.Cqrs.Commands.Abstractions;
 using Carhub.Service.Vehicles.Application.Exceptions;
 using Carhub.Service.Vehicles.Domain.Repositories;
 
-namespace Carhub.Service.Vehicles.Application.Commands.AppendVehicleRegistration;
+namespace Carhub.Service.Vehicles.Application.Commands.Vehicles.AppendVehicleRegistration;
 
 internal sealed class AppendVehicleRegistrationCommandHandler(
     IVehicleRepository vehicleRepository) : ICommandHandler<AppendVehicleRegistrationCommand>

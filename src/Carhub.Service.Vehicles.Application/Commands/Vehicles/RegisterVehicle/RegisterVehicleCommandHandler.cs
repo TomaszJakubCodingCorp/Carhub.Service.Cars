@@ -4,7 +4,7 @@ using Carhub.Service.Vehicles.Application.Exceptions;
 using Carhub.Service.Vehicles.Domain.Repositories;
 using Carhub.Service.Vehicles.Domain.Vehicles.Entities;
 
-namespace Carhub.Service.Vehicles.Application.Commands.RegisterVehicle;
+namespace Carhub.Service.Vehicles.Application.Commands.Vehicles.RegisterVehicle;
 
 internal sealed class RegisterVehicleCommandHandler(
     IVehicleRepository vehicleRepository,

@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 using Carhub.Lib.Cqrs.Commands.Abstractions;
-using Carhub.Service.Vehicles.Application.Commands.AppendVehicleRegistration;
+using Carhub.Service.Vehicles.Application.Commands.Vehicles.AppendVehicleRegistration;
 using Carhub.Service.Vehicles.Application.Exceptions;
 using Carhub.Service.Vehicles.Domain.Repositories;
 using Carhub.Service.Vehicles.Tests.Shared.Domain.Vehicles;

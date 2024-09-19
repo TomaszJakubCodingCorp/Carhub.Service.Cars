@@ -1,5 +1,5 @@
 using Carhub.Lib.Cqrs.Commands.Abstractions;
-using Carhub.Service.Vehicles.Application.Commands.RegisterVehicle;
+using Carhub.Service.Vehicles.Application.Commands.Vehicles.RegisterVehicle;
 using Carhub.Service.Vehicles.Application.Events;
 using Carhub.Service.Vehicles.Application.Exceptions;
 using Carhub.Service.Vehicles.Domain.Repositories;
