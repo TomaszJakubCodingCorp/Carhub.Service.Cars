@@ -13,6 +13,7 @@ internal static class Extensions
         => services
             .AddRabbitMqSerializing()
             .AddServices()
+            .AddConfiguration(configuration)
             .AddRabbitMqProducerConnection(configuration)
             .AddRabbitMqConsumerConnection(configuration);
 
@@ -20,11 +21,16 @@ internal static class Extensions
         => services
             .AddScoped<IRabbitMqClient, RabbitMqClient>();
 
+    private static IServiceCollection AddConfiguration(this IServiceCollection services, IConfiguration configuration)
+        => services
+            .Configure<RabbitMqOptions>(configuration.GetSection(RabbitMqOptions.OptionsName));
+
     private static IServiceCollection AddRabbitMqProducerConnection(this IServiceCollection services, IConfiguration configuration)
         => services
             .AddSingleton<ProducerConnection>(sp =>
             {
                 var options = configuration.GetOptions<RabbitMqOptions>(RabbitMqOptions.OptionsName);
+                
                 var connectionFactory = new ConnectionFactory()
                 {
                     Port = options.Port,
@@ -32,7 +38,7 @@ internal static class Extensions
                     VirtualHost = options.VirtualHost,
                     UserName = options.UserName,
                     Password = options.Password,
-                    ClientProvidedName = "Carhub.Service.Cars"
+                    ClientProvidedName = $"{options.ConnectionName}_Producer"
                 };
                 var connection = connectionFactory.CreateConnection();
                 return new ProducerConnection(connection);
@@ -51,7 +57,7 @@ internal static class Extensions
                     VirtualHost = options.VirtualHost,
                     UserName = options.UserName,
                     Password = options.Password,
-                    ClientProvidedName = "Carhub.Service.Cars"
+                    ClientProvidedName = $"{options.ConnectionName}_Consumer"
                 };
                 var connection = connectionFactory.CreateConnection();
                 return new ConsumerConnection(connection);

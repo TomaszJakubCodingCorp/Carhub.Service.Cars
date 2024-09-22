@@ -14,7 +14,7 @@ namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq;
 internal class RabbitMqBackgroundService<TMessage> : BackgroundService where TMessage : class, IConsumer
 {
     private readonly ILogger<RabbitMqBackgroundService<TMessage>> _logger;
-    private readonly IConnection _connection;
+    private readonly IModel _channel;
     private readonly IRabbitMqSerializer _rabbitMqSerializer;
     private readonly ConsumerOptions _consumerOptions;
     private readonly Func<TMessage, Task> _handle;
@@ -27,7 +27,8 @@ internal class RabbitMqBackgroundService<TMessage> : BackgroundService where TMe
         Func<TMessage,Task> handle)
     {
         _logger = logger;
-        _connection = consumerConnection.Connection;
+        var connection = consumerConnection.Connection;
+        _channel = connection.CreateModel();
         _rabbitMqSerializer = rabbitMqSerializer;
         _consumerOptions = consumerOptions;
         _handle = handle;
@@ -35,21 +36,21 @@ internal class RabbitMqBackgroundService<TMessage> : BackgroundService where TMe
     
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        using var channel = _connection.CreateModel();
-        channel.ExchangeDeclare(_consumerOptions.Exchange, ExchangeType.Direct, true, false);
-        channel.QueueDeclare(_consumerOptions.Queue, true, false, false);
-        channel.QueueBind(_consumerOptions.Queue, _consumerOptions.Exchange, _consumerOptions.Routing);
+        _channel.ExchangeDeclare(_consumerOptions.Exchange, ExchangeType.Direct, true, false);
+        _channel.QueueDeclare(_consumerOptions.Queue, true, false, false);
+        _channel.QueueBind(_consumerOptions.Queue, _consumerOptions.Exchange, _consumerOptions.Routing);
         
-        var consumer = new EventingBasicConsumer(channel);
-        consumer.Received += async (model, ea) =>
+        var consumer = new EventingBasicConsumer(_channel);
+        consumer.Received += async (_, ea) =>
         {
             var messageBytes = ea.Body.ToArray();
             var json = Encoding.UTF8.GetString(messageBytes);
             var message = _rabbitMqSerializer.ToObject<TMessage>(json);
             await _handle(message);
+            _channel.BasicAck(ea.DeliveryTag, false);
         };
-        channel.BasicConsume(queue: _consumerOptions.Queue,
-            autoAck: true,
+        _channel.BasicConsume(queue: _consumerOptions.Queue,
+            autoAck: false,
             consumer: consumer);
         return Task.CompletedTask;
     }

@@ -1,7 +1,7 @@
-@url = localhost:5104
+@url = http://localhost:5104
 
 ###
-GET {{url}}/vehicles/register
+POST {{url}}/vehicles/register
 Content-Type: application/json
 
 {

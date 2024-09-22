@@ -8,7 +8,7 @@ internal sealed class CreateOwnershipCommandHandler(
 {
     public Task HandleAsync(CreateOwnershipCommand command, CancellationToken cancellationToken = new CancellationToken())
     {
-        logger.LogInformation(command.CarId.ToString());
+        logger.LogInformation(command.VehicleId.ToString());
         return Task.CompletedTask;
     }
 }

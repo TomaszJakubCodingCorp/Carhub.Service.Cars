@@ -10,7 +10,8 @@ internal sealed record RabbitMqOptions
     public string VirtualHost { get; init; }
     public string UserName { get; init; }
     public string Password { get; init; }
-    public List<ConsumerOptions> Consumers { get; set; }
+    public string ConnectionName { get; init; }
+    public List<ConsumerOptions> Consumers { get; init; }
 }
 
 internal sealed record ConsumerOptions
