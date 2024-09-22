@@ -43,11 +43,19 @@ internal class RabbitMqBackgroundService<TMessage> : BackgroundService where TMe
         var consumer = new EventingBasicConsumer(_channel);
         consumer.Received += async (_, ea) =>
         {
-            var messageBytes = ea.Body.ToArray();
-            var json = Encoding.UTF8.GetString(messageBytes);
-            var message = _rabbitMqSerializer.ToObject<TMessage>(json);
-            await _handle(message);
-            _channel.BasicAck(ea.DeliveryTag, false);
+            try
+            {
+                var messageBytes = ea.Body.ToArray();
+                var json = Encoding.UTF8.GetString(messageBytes);
+                var message = _rabbitMqSerializer.ToObject<TMessage>(json);
+                await _handle(message);
+                _channel.BasicAck(ea.DeliveryTag, false);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                _channel.BasicNack(ea.DeliveryTag, false, true);
+            }
         };
         _channel.BasicConsume(queue: _consumerOptions.Queue,
             autoAck: false,
