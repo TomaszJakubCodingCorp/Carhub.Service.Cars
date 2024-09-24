@@ -2,7 +2,6 @@ using Carhub.Service.Vehicles.Application;
 using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Configuration;
 using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Connections;
 using Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Serializing;
-using Carhub.Service.Vehicles.Infrastructure.RabbitMqConfigTests;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -11,7 +10,8 @@ namespace Carhub.Service.Vehicles.Infrastructure.Messaging.RabbitMq.Consumer;
 
 public static class ConsumerRegistryExtension
 {
-    public static IRabbitMqServiceCollection AddConsumer<TMessage>(this IRabbitMqServiceCollection services,
+    
+    public static IServiceCollection AddConsumer<TMessage>(this IServiceCollection services,
         Func<TMessage, Task> func)
         where TMessage : class, IConsumer
     {
