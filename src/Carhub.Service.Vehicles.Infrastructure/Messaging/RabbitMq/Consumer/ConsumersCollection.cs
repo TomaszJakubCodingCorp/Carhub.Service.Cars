@@ -6,7 +6,7 @@ public class ConsumersCollection
 {
     private readonly Dictionary<Type, object> _consumers = new Dictionary<Type, object>();
 
-    public void Add<TMessage>(Func<TMessage, Task> handler)
+    public void AddConsumer<TMessage>(Func<TMessage, Task> handler)
     {
         _consumers[typeof(TMessage)] = handler;
     }
@@ -16,6 +16,10 @@ public class ConsumersCollection
         foreach (var consumer in _consumers)
         {
             var methodInfo = typeof(ConsumerRegistryExtension).GetMethod(nameof(ConsumerRegistryExtension.AddConsumer));
+            if (methodInfo is null)
+            {
+                throw new ArgumentException("Method not found");
+            }
             var genericMethod = methodInfo.MakeGenericMethod(consumer.Key);
             genericMethod.Invoke(null, new[] { services, consumer.Value });
         }

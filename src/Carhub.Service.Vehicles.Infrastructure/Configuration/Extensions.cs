@@ -10,10 +10,9 @@ namespace Carhub.Service.Vehicles.Infrastructure.Configuration;
 public static class Extensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
-        => services
-            .AddMessaging(configuration,
+        => services.AddMessaging(configuration,
                 consumers => 
-                    consumers.Add<CreateOwnershipCommand>(message =>
+                    consumers.AddConsumer<CreateOwnershipCommand>(message =>
                     {
                         var scope = services.BuildServiceProvider();
                         var commandHandler = scope.GetRequiredService<ICommandHandler<CreateOwnershipCommand>>();
