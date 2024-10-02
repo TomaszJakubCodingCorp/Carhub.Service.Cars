@@ -1,4 +1,5 @@
 using Carhub.Lib.Cqrs.Commands.Abstractions;
+using Carhub.Lib.MessageBrokers.Abstractions;
 using Carhub.Service.Vehicles.Application.Commands.Vehicles.RegisterVehicle;
 using Carhub.Service.Vehicles.Application.Events;
 using Carhub.Service.Vehicles.Application.Exceptions;
@@ -31,7 +32,7 @@ public sealed class RegisterVehicleCommandHandlerTests
         //assert
         exception.ShouldBeOfType<VinNumberAlreadyRegisteredException>();
 
-        await _eventPublisher
+        _eventPublisher
             .Received(0)
             .Publish(Arg.Any<IEvent>());
     }
@@ -63,7 +64,7 @@ public sealed class RegisterVehicleCommandHandlerTests
                    && arg.Weight.Gross == command.WeightGross
                    && arg.Weight.Curb == command.WeightCurb), default);
 
-        await _eventPublisher
+        _eventPublisher
             .Received(1)
             .Publish(Arg.Is<VehicleRegistered>(arg
                 => arg.VehicleId == command.Id));

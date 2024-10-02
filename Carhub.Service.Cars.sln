@@ -21,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Service.Vehicles.Infrastructure", "src\Carhub.Service.Vehicles.Infrastructure\Carhub.Service.Vehicles.Infrastructure.csproj", "{7DFC2A64-9283-43F1-9139-8997DF0383FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Lib.MessageBrokers.EventsAbstractions", "..\Carhub.Lib\src\Carhub.Lib.MessageBrokers.EventsAbstractions\Carhub.Lib.MessageBrokers.EventsAbstractions.csproj", "{CBAC9422-5364-49F7-895F-FBF7D72F1C05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Lib.MessageBrokers.RabbitMq", "..\Carhub.Lib\src\Carhub.Lib.MessageBrokers.RabbitMq\Carhub.Lib.MessageBrokers.RabbitMq.csproj", "{B713D99F-D6DD-4248-9B1B-29EF5864DF44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carhub.Lib.MessageBrokers.Outbox", "src\Carhub.Lib.MessageBrokers.Outbox\Carhub.Lib.MessageBrokers.Outbox.csproj", "{9FD85BF7-AD15-440B-9FB6-85224A1C7214}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +64,18 @@ Global
 		{7DFC2A64-9283-43F1-9139-8997DF0383FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DFC2A64-9283-43F1-9139-8997DF0383FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DFC2A64-9283-43F1-9139-8997DF0383FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAC9422-5364-49F7-895F-FBF7D72F1C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAC9422-5364-49F7-895F-FBF7D72F1C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAC9422-5364-49F7-895F-FBF7D72F1C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAC9422-5364-49F7-895F-FBF7D72F1C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B713D99F-D6DD-4248-9B1B-29EF5864DF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B713D99F-D6DD-4248-9B1B-29EF5864DF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B713D99F-D6DD-4248-9B1B-29EF5864DF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B713D99F-D6DD-4248-9B1B-29EF5864DF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD85BF7-AD15-440B-9FB6-85224A1C7214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD85BF7-AD15-440B-9FB6-85224A1C7214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD85BF7-AD15-440B-9FB6-85224A1C7214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD85BF7-AD15-440B-9FB6-85224A1C7214}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5E53F93A-C190-4A82-83D4-1CDA1A9D0054} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
@@ -67,5 +85,8 @@ Global
 		{6EC6E4C4-1306-4A09-8AA8-9D41F42A9CFA} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
 		{186FAE14-9B7B-46C9-876B-0A98FE7E0FB4} = {28C514AB-1D34-43DE-933E-29BBF7981AD0}
 		{7DFC2A64-9283-43F1-9139-8997DF0383FF} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
+		{CBAC9422-5364-49F7-895F-FBF7D72F1C05} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
+		{B713D99F-D6DD-4248-9B1B-29EF5864DF44} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
+		{9FD85BF7-AD15-440B-9FB6-85224A1C7214} = {F944839A-813B-4304-B11E-27B6C67B5BE8}
 	EndGlobalSection
 EndGlobal

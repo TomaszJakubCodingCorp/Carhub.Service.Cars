@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Carhub.Service.Vehicles.Infrastructure.Outbox.Accessors.Configuration;
+namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Configuration;
 
 internal static class Extensions
 {

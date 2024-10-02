@@ -1,4 +1,5 @@
 using Carhub.Lib.Cqrs.Commands.Abstractions;
+using Carhub.Lib.MessageBrokers.Abstractions;
 using Carhub.Service.Vehicles.Application.Events;
 using Carhub.Service.Vehicles.Application.Exceptions;
 using Carhub.Service.Vehicles.Domain.Repositories;
@@ -20,6 +21,6 @@ internal sealed class RegisterVehicleCommandHandler(
             command.EngineCapacity, command.EnginePower, command.EngineTypeOfFuel, command.WeightGross,
             command.WeightCurb);
         await vehicleRepository.AddAsync(vehicle, cancellationToken);
-        await eventPublisher.Publish(new VehicleRegistered(command.Id));
+        eventPublisher.Publish(new VehicleRegistered(command.Id));
     }
 }

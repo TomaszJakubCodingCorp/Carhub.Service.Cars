@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Carhub.Lib\src\Carhub.Lib.MessageBrokers.EventsAbstractions\Carhub.Lib.MessageBrokers.EventsAbstractions.csproj" />
       <ProjectReference Include="..\Carhub.Service.Vehicles.Domain\Carhub.Service.Vehicles.Domain.csproj" />
     </ItemGroup>
     <ItemGroup>

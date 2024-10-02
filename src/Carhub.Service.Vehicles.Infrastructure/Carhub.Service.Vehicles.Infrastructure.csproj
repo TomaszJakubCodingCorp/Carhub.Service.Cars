@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\Carhub.Lib\src\Carhub.Lib.MessageBrokers.RabbitMq\Carhub.Lib.MessageBrokers.RabbitMq.csproj" />
       <ProjectReference Include="..\Carhub.Service.Vehicles.Application\Carhub.Service.Vehicles.Application.csproj" />
     </ItemGroup>
 

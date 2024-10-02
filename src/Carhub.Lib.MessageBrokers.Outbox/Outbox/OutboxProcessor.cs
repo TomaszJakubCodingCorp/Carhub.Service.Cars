@@ -1,12 +1,12 @@
-using Carhub.Service.Vehicles.Application;
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Accessors.Abstractions;
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Configuration;
+using Carhub.Lib.MessageBrokers.Abstractions;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Carhub.Service.Vehicles.Infrastructure.Outbox;
+namespace Carhub.Lib.MessageBrokers.Outbox.Outbox;
 
 internal sealed class OutboxProcessor : BackgroundService
 {

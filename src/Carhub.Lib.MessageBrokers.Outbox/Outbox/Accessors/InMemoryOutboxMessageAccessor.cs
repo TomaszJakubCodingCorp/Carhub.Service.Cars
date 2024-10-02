@@ -1,10 +1,10 @@
 using System.Collections.Concurrent;
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Accessors.Abstractions;
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Configuration;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Configuration;
 using Carhub.Service.Vehicles.Infrastructure.Outbox.Models;
 using Microsoft.Extensions.Options;
 
-namespace Carhub.Service.Vehicles.Infrastructure.Outbox.Accessors;
+namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors;
 
 internal sealed class InMemoryOutboxMessageAccessor : IOutboxMessageAccessor
 {

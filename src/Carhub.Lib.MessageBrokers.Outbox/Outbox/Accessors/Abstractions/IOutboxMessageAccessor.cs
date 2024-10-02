@@ -1,6 +1,6 @@
 using Carhub.Service.Vehicles.Infrastructure.Outbox.Models;
 
-namespace Carhub.Service.Vehicles.Infrastructure.Outbox.Accessors.Abstractions;
+namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
 
 public interface IOutboxMessageAccessor
 {
