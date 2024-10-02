@@ -16,7 +16,7 @@ internal sealed class InMemoryOutboxMessageAccessor : IOutboxMessageAccessor
         _expiry = options.Value.Expiry;
     }
     
-    public Task<List<OutboxMessage>> GetUnsentAsync()
+    public Task<List<OutboxMessage>> GetUnsentAsync(CancellationToken cancellationToken)
     {
         return Task.FromResult(_outboxMessages
             .Where(x => x.Value.ProcessedAt is null)
