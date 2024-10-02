@@ -1,4 +1,4 @@
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Models;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
 
 namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
 

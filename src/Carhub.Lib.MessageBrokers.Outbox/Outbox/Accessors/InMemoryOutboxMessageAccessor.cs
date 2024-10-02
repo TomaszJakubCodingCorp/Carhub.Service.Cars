@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 using Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
 using Carhub.Lib.MessageBrokers.Outbox.Outbox.Configuration;
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Models;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
 using Microsoft.Extensions.Options;
 
 namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors;

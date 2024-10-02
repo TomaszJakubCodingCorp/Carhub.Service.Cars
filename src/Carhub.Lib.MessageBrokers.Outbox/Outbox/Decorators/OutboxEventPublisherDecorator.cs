@@ -1,32 +1,37 @@
 using Carhub.Lib.MessageBrokers.Abstractions;
 using Carhub.Lib.MessageBrokers.Abstractions.Serializing;
-using Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
-using Carhub.Service.Vehicles.Infrastructure.Outbox.Models;
+using Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Decorators;
 
 internal sealed class OutboxEventPublisherDecorator(
     IEventPublisher eventPublisher,
-    IOutboxMessageAccessor messageAccessor,
+    ILogger<OutboxEventPublisherDecorator> logger, 
+    IOutboxMessageSaver outboxMessageSaver,
     IMessageBrokerSerializer serializer) : IEventPublisher
 {
-    public string Publish<TMessage>(TMessage message) where TMessage : class, IEvent
+    public void Publish<TMessage>(TMessage message, Guid? messageId = null) where TMessage : class, IEvent
     {
+        var outboxMessage = new OutboxMessage();
+        messageId ??= Guid.NewGuid();
         try
         {
-            var messageId = eventPublisher.Publish(message);
-            var outboxMessage = new OutboxMessage()
-            {
-                Id = Guid.NewGuid(),
-                MessageId = messageId,
-                SerializedMessage = serializer.ToByteJson(message),
-                
-            }
-            //messageAccessor.ProcessAsync()
+            eventPublisher.Publish(message, messageId);
+            outboxMessage.ProcessedAt = DateTime.Now;
         }
         catch (Exception ex)
         {
-            
+            logger.LogError(ex, ex.Message);
+        }
+        finally
+        {
+            outboxMessage.Id = Guid.NewGuid();
+            outboxMessage.MessageId = messageId.ToString();
+            outboxMessage.SerializedMessage = serializer.ToStringJson(message);
+            outboxMessage.MessageType = message?.GetType()?.FullName;
+            outboxMessage.SentAt = DateTime.Now;
+            outboxMessageSaver.Handle(outboxMessage);
         }
     }
 }
