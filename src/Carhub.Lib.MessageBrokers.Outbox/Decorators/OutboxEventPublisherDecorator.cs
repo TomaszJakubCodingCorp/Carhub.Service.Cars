@@ -1,9 +1,9 @@
 using Carhub.Lib.MessageBrokers.Abstractions;
 using Carhub.Lib.MessageBrokers.Abstractions.Serializing;
-using Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
+using Carhub.Lib.MessageBrokers.Outbox.Models;
 using Microsoft.Extensions.Logging;
 
-namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Decorators;
+namespace Carhub.Lib.MessageBrokers.Outbox.Decorators;
 
 internal sealed class OutboxEventPublisherDecorator(
     IEventPublisher eventPublisher,

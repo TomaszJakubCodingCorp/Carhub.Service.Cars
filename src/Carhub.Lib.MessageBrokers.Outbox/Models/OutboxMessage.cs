@@ -1,4 +1,4 @@
-namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
+namespace Carhub.Lib.MessageBrokers.Outbox.Models;
 
 public sealed class OutboxMessage
 {

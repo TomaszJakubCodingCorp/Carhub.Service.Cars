@@ -13,10 +13,7 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
       <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Outbox\Decorators\Configuration\" />
+      <PackageReference Include="Scrutor" Version="5.0.1" />
     </ItemGroup>
 
 </Project>

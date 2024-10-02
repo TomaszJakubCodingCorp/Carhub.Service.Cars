@@ -1,12 +1,12 @@
 using System.Collections.Concurrent;
-using Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
-using Carhub.Lib.MessageBrokers.Outbox.Outbox.Configuration;
-using Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
+using Carhub.Lib.MessageBrokers.Outbox.Accessors.Abstractions;
+using Carhub.Lib.MessageBrokers.Outbox.Configuration;
+using Carhub.Lib.MessageBrokers.Outbox.Models;
 using Microsoft.Extensions.Options;
 
-namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors;
+namespace Carhub.Lib.MessageBrokers.Outbox.Accessors;
 
-internal sealed class InMemoryOutboxMessageAccessor : IOutboxMessageAccessor
+internal sealed class InMemoryOutboxMessageAccessor : IOutboxMessageAccessor, IOutboxMessageSaver
 {
     private readonly ConcurrentDictionary<string, OutboxMessage> _outboxMessages = [];
     private readonly TimeSpan _expiry;
@@ -52,4 +52,8 @@ internal sealed class InMemoryOutboxMessageAccessor : IOutboxMessageAccessor
         => outboxMessage.ProcessedAt is null ? 
             TimeSpan.Zero : 
             TimeSpan.FromMicroseconds(now.Microsecond - outboxMessage.ProcessedAt.Value.Microsecond);
+
+    public void Handle(OutboxMessage outboxMessage)
+        => _outboxMessages.TryAdd(outboxMessage.MessageId, outboxMessage);
+    
 }

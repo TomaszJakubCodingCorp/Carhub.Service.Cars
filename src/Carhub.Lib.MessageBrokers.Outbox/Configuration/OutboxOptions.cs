@@ -1,4 +1,4 @@
-namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Configuration;
+namespace Carhub.Lib.MessageBrokers.Outbox.Configuration;
 
 public sealed record OutboxOptions
 {

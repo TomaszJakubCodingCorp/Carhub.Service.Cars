@@ -1,6 +1,6 @@
-using Carhub.Lib.MessageBrokers.Outbox.Outbox.Models;
+using Carhub.Lib.MessageBrokers.Outbox.Models;
 
-namespace Carhub.Lib.MessageBrokers.Outbox.Outbox.Accessors.Abstractions;
+namespace Carhub.Lib.MessageBrokers.Outbox.Accessors.Abstractions;
 
 public interface IOutboxMessageAccessor
 {
